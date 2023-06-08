@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/intervew_nav"
+    app:startDestination="@id/lesInterviewFragment">
+
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="tn.esprit.journaideapp.view.fragment.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/lesInterviewFragment"
+        android:name="tn.esprit.journaideapp.view.fragment.LesInterviewFragment"
+        android:label="fragment_les_interview"
+        tools:layout="@layout/fragment_les_interview" />
+    <fragment
+        android:id="@+id/mesInterviewFragment"
+        android:name="tn.esprit.journaideapp.view.fragment.MesInterviewFragment"
+        android:label="fragment_mes_interview"
+        tools:layout="@layout/fragment_mes_interview" />
+</navigation>
