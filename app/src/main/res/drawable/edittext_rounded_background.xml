@@ -1,0 +1,7 @@
+<!-- Add a new drawable resource file named edittext_rounded_background.xml in your res/drawable folder -->
+
+<!-- res/drawable/edittext_rounded_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF" />
+    <corners android:radius="8dp" /> <!-- Adjust the radius as needed -->
+</shape>

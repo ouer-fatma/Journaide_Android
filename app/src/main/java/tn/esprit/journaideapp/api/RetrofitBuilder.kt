@@ -29,7 +29,7 @@ object RetrofitBuilder {
 
 
         var retrofit: Retrofit = retrofit2.Retrofit.Builder()
-            .baseUrl("http://192.168.1.16:3000/")
+            .baseUrl("http://192.168.1.12:3000/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(mOkHttpClient)
             .build()

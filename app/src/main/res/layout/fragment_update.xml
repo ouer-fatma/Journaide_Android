@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background">
+        android:background="#F0F0F0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="400dp"
@@ -32,11 +32,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Update Interview"
+                android:text="Update Charity"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -44,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:hint="Non Interview"
+                android:hint="Charity name"
                 android:textAlignment="textEnd"
                 app:layout_constraintTop_toBottomOf="@+id/tv_register">
 
@@ -64,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:hint="Non interviewee"
+                android:hint="Mission Statement"
                 android:textAlignment="textEnd"
                 app:layout_constraintTop_toBottomOf="@+id/textUsername">
 
@@ -84,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:hint="Question"
+                android:hint="Contact information"
                 android:textAlignment="textEnd"
                 app:layout_constraintTop_toBottomOf="@+id/textEmail">
 
@@ -104,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:hint="Reponse"
+                android:hint="Payement infos"
                 android:textAlignment="textEnd"
                 app:layout_constraintTop_toBottomOf="@+id/textPassword">
 

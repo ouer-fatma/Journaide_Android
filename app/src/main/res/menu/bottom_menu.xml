@@ -4,19 +4,19 @@
     <item
         android:id="@+id/list"
         android:icon="@drawable/baseline_interpreter"
-        android:title="Les Interview" />
+        android:title="Les charities" />
     <item
-        android:id="@+id/record"
+        android:id="@+id/profile"
         android:icon="@drawable/baseline_interpreter"
         android:title="record" />
     <item
         android:id="@+id/AddFragment"
         android:icon="@drawable/ic_baseline_post_add_24"
-        android:title="Ajouter interview" />
+        android:title="Ajouter charity" />
     <item
         android:id="@+id/mes"
         android:icon="@drawable/ic_baseline_clear_all_24"
-        android:title="Mes interview" />
+        android:title="Mes charities" />
     <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_baseline_logout_24"

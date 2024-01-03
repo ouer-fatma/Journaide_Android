@@ -50,5 +50,18 @@ class InterviewAdapter(val InterviewList: MutableList<Interview>):
         val reponse=itemView.findViewById<TextView>(R.id.reponse)
 
     }
+    fun setInterviewList(newList: List<Interview>) {
+        InterviewList.clear()
+        InterviewList.addAll(newList)
+        notifyDataSetChanged()
+    }
+
+    fun filterByNomInterviewer(searchTerm: String) {
+        val filteredList = InterviewList.filter {
+            it.nom_interviewer?.contains(searchTerm, ignoreCase = true) == true
+        }.toMutableList()
+
+        setInterviewList(filteredList)
+    }
 
 }

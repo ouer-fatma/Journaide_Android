@@ -22,6 +22,9 @@ import android.widget.RadioButton
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import android.graphics.Color
+import android.os.Build
+
 
 import tn.esprit.journaide.models.modelResponse.SignupResponse
 
@@ -35,16 +38,26 @@ import tn.esprit.journaideapp.view.activity.NavActivity
 class MainActivity : AppCompatActivity() {
     private var retrofit: Retrofit? = null
     private var retrofitInterface: ApiInterface? = null
-    private val BASE_URL = "http://192.168.1.16:3000/"
+    private val BASE_URL = "http://192.168.1.12:3000/"
     val apiInterface = RetrofitBuilder.create( ApiInterface::class.java)
 
 
     @SuppressLint("MissingInflatedId", "WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+// Make the status bar transparent
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            window.statusBarColor = Color.TRANSPARENT
+        }
+
         setContentView(R.layout.activity_main)
 
 
+
+
+
+        supportActionBar?.hide()
 
 
         lateinit var btn:Button
@@ -122,10 +135,10 @@ class MainActivity : AppCompatActivity() {
                         if (response.code() == 200) {
                             Toast.makeText(
                                 this@MainActivity,
-                                map["Username"],
+                                "successfuly registred",
                                 Toast.LENGTH_LONG
                             ).show()
-                            val intent = Intent(this@MainActivity, NavActivity::class.java)
+                            val intent = Intent(this@MainActivity, LoginActivity::class.java)
                             finish()
                             startActivity(intent)
                         } else if (response.code() == 400) {

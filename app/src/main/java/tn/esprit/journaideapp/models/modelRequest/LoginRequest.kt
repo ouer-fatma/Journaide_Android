@@ -1,6 +1,6 @@
 package tn.esprit.journaide.models.modelRequest
 
 data class LoginRequest(
-    val Email: String,
+    val Username: String,
     val Password: String,
 )

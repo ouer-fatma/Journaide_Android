@@ -43,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
         btnRegister.isEnabled = false
 
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.1.16:3000/register"
+        val url = "http://192.168.220.165:3000/register"
 
         val requestBody =
             "username=" + etUsername.text + "&email=" + URLEncoder.encode(etEmail.text.toString(), "UTF-8") + "&password=" + etPassword.text

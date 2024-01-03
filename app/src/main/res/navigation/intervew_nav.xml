@@ -13,11 +13,22 @@
     <fragment
         android:id="@+id/lesInterviewFragment"
         android:name="tn.esprit.journaideapp.view.fragment.LesInterviewFragment"
-        android:label="fragment_les_interview"
+        android:label="fragment_les_charities"
         tools:layout="@layout/fragment_les_interview" />
     <fragment
         android:id="@+id/mesInterviewFragment"
         android:name="tn.esprit.journaideapp.view.fragment.MesInterviewFragment"
-        android:label="fragment_mes_interview"
+        android:label="fragment_mes_charities"
         tools:layout="@layout/fragment_mes_interview" />
+    <fragment
+        android:id="@+id/ProfileFragment"
+        android:name="tn.esprit.journaideapp.view.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile"
+        />
+
+    <!-- Add an action from LoginFragment to ProfileFragment -->
+    <action
+        android:id="@+id/action_login_to_profile"
+        app:destination="@id/ProfileFragment" />
 </navigation>

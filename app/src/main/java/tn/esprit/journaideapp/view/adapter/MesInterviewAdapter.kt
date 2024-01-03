@@ -31,11 +31,12 @@ import tn.esprit.journaideapp.view.fragment.UpdateFragment
 
 
 
-class MesInterviewAdapter(val InterviewList: MutableList<Interview>):
+class MesInterviewAdapter(private var InterviewList: MutableList<Interview>):
     RecyclerView.Adapter<MesInterviewAdapter.InterviewViewHolder>() {
     private lateinit var  context: Context
 
-
+    var interviewList: MutableList<Interview> = mutableListOf()
+        private set
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InterviewViewHolder {
         context = parent.context
@@ -85,6 +86,7 @@ class MesInterviewAdapter(val InterviewList: MutableList<Interview>):
         transaction.addToBackStack(null)
         transaction.commit()
     }
+
     fun deleteiem(ID: String) : Boolean{
         val retrofit: retrofit2.Retrofit = RetrofitBuilder.getInstance()
         val service: ApiInterface = retrofit.create(ApiInterface::class.java)
@@ -117,8 +119,8 @@ class MesInterviewAdapter(val InterviewList: MutableList<Interview>):
         }
         return false
 
-
-
-
     }
+
+
+
 }
