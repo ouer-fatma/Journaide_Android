@@ -35,9 +35,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var tvForgotPassword: TextView
     private lateinit var tvRegister: TextView
     private lateinit var MySharedPref: SharedPreferences
-    private val BASE_URL = "http://192.168.1.12:3000/"
+
     private val apiInterface = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(RetrofitBuilder.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(ApiInterface::class.java)
@@ -100,7 +100,8 @@ class LoginActivity : AppCompatActivity() {
 
                     // Pass the username to NavActivity
                     val intent = Intent(this@LoginActivity, NavActivity::class.java)
-                    intent.putExtra("user_name", username)
+                    intent.putExtra("user_name", loginResponse?.user?.Username)
+                    intent.putExtra("email", loginResponse?.user?.Email)
                     finish()
                     startActivity(intent)
 

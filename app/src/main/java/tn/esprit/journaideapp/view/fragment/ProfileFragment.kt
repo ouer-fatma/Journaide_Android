@@ -6,13 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Switch
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+import androidx.fragment.app.Fragment
 import tn.esprit.journaideapp.R
 
 class ProfileFragment : Fragment() {
+
+    private lateinit var usernameTV: TextView
+    private lateinit var emailTV: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,10 +33,13 @@ class ProfileFragment : Fragment() {
                 AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
             }
         }
-        // Retrieve and display the user name argument
-        val userName = arguments?.getString("user_name")
-        val userNameTextView: TextView = view.findViewById(R.id.userNameTextView)
-        userNameTextView.text = userName
+
+        usernameTV = view.findViewById(R.id.usernameTV)
+        emailTV = view.findViewById(R.id.emailTV)
+
+        usernameTV.text = "Username : " + requireActivity().intent?.getStringExtra("user_name")
+        emailTV.text = "Email : " + requireActivity().intent?.getStringExtra("email")
+
         return view
     }
 
