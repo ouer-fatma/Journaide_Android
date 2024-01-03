@@ -38,9 +38,8 @@ import tn.esprit.journaideapp.view.activity.NavActivity
 class MainActivity : AppCompatActivity() {
     private var retrofit: Retrofit? = null
     private var retrofitInterface: ApiInterface? = null
-    private val BASE_URL = "http://192.168.1.12:3000/"
-    val apiInterface = RetrofitBuilder.create( ApiInterface::class.java)
 
+    val apiInterface = RetrofitBuilder.create( ApiInterface::class.java)
 
     @SuppressLint("MissingInflatedId", "WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,7 +87,7 @@ class MainActivity : AppCompatActivity() {
 
 
         retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(RetrofitBuilder.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         retrofitInterface = retrofit!!.create(ApiInterface::class.java)
